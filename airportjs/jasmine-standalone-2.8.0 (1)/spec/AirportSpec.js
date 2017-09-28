@@ -29,6 +29,7 @@ describe("Airport", function() {
   });
 
 describe("under stormy conditions", function() {
+
   it("does not clear planes for takeoff", function() {
     spyOn(airport, "isStormy").and.returnValue(true);
     expect(function(){ airport.clearForTakeoff(plane); }).toThrowError("cannot takeoff during storm");
@@ -39,4 +40,5 @@ describe("under stormy conditions", function() {
     expect(function(){ airport.clearForLanding(plane); }).toThrowError("cannot land during storm");
   });
  });
+ 
 });
